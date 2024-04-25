@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import {
   Card,
@@ -17,9 +15,9 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 
 interface BillingCardPropsType {
   title: string;
-  options: string[];
+  options: { label: string; value: string }[]; // Change the type of options to an array of objects with label and value properties
   action: string;
-  icon: string;
+  icon: JSX.Element; // Change the type of icon to JSX.Element
   detail: string;
 }
 
@@ -68,7 +66,7 @@ function BillingCard({ title, options, icon, detail }: BillingCardPropsType) {
       <div>
         {options && (
           <div>
-            {Object.entries(options).map(([label, value]) => (
+            {options.map(({ label, value }) => (
               <div key={label} className="flex gap-1">
                 <Typography className="mb-1 text-xs !font-medium text-gray-600 dark:text-white">
                   {label}:
@@ -93,37 +91,36 @@ const billingCardData = [
     icon: <BriefcaseIcon className="h-6 w-6 text-gray-900" />,
     title: "Burrito Vikingss",
     detail: "Company",
-    options: {
-      "Contact": "Emma Roberts",
-      "Email Address": "emma@mail.com",
-      "VAT Number": "FRB1235476",
-    },
+    options: [
+      { label: "Contact", value: "Emma Roberts" },
+      { label: "Email Address", value: "emma@mail.com" },
+      { label: "VAT Number", value: "FRB1235476" },
+    ],
     action: "", // Dummy action property
   },
   {
     icon: <BriefcaseIcon className="h-6 w-6 text-gray-900" />,
     title: "Stone Tech Zone",
     detail: "Company",
-    options: {
-      "Contact": "Marcel Glock",
-      "Email Address": "marcel@mail.com",
-      "VAT Number": "FRB1235476",
-    },
+    options: [
+      { label: "Contact", value: "Marcel Glock" },
+      { label: "Email Address", value: "marcel@mail.com" },
+      { label: "VAT Number", value: "FRB1235476" },
+    ],
     action: "", // Dummy action property
   },
   {
     icon: <BriefcaseIcon className="h-6 w-6 text-gray-900" />,
     title: "Fiber Notion",
     detail: "Company",
-    options: {
-      "Contact": "Misha Stam",
-      "Email Address": "misha@mail.com",
-      "VAT Number": "FRB1235476",
-    },
+    options: [
+      { label: "Contact", value: "Misha Stam" },
+      { label: "Email Address", value: "misha@mail.com" },
+      { label: "VAT Number", value: "FRB1235476" },
+    ],
     action: "", // Dummy action property
   },
 ];
-
 
 function Billing() {
   return (
