@@ -57,7 +57,7 @@ const Calendar = () => {
                 <option value={3}>April</option>
                 <option value={4}>May</option>
                 <option value={5}>June</option>
-                <option value={6} selected="">
+                <option value={6}>
                   July
                 </option>
                 <option value={7}>August</option>
