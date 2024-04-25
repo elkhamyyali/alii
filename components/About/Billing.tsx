@@ -94,32 +94,36 @@ const billingCardData = [
     title: "Burrito Vikingss",
     detail: "Company",
     options: {
-      Contact: "Emma Roberts",
+      "Contact": "Emma Roberts",
       "Email Address": "emma@mail.com",
       "VAT Number": "FRB1235476",
     },
+    action: "", // Dummy action property
   },
   {
     icon: <BriefcaseIcon className="h-6 w-6 text-gray-900" />,
     title: "Stone Tech Zone",
     detail: "Company",
     options: {
-      Contact: "Marcel Glock",
+      "Contact": "Marcel Glock",
       "Email Address": "marcel@mail.com",
       "VAT Number": "FRB1235476",
     },
+    action: "", // Dummy action property
   },
   {
     icon: <BriefcaseIcon className="h-6 w-6 text-gray-900" />,
     title: "Fiber Notion",
     detail: "Company",
     options: {
-      Contact: "Misha Stam",
+      "Contact": "Misha Stam",
       "Email Address": "misha@mail.com",
       "VAT Number": "FRB1235476",
     },
+    action: "", // Dummy action property
   },
 ];
+
 
 function Billing() {
   return (
